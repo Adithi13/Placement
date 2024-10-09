@@ -1,4 +1,4 @@
-1]**GRANT:**Assigns new privileges to a user account, allowing access to specific database objects, actions, or functions.	
+1]**GRANT:** Assigns new privileges to a user account, allowing access to specific database objects, actions, or functions.	
 
 **Syntax:** GRANT privilege_type [(column_list)] ON [object_type] object_name TO user [WITH GRANT OPTION];
 
