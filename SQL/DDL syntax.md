@@ -4,9 +4,13 @@
 
 
 
+
+
 2] **DROP:**	Delete objects from the database	
 
  **Syntax:** DROP TABLE table_name;
+
+ 
 
 
  
@@ -15,6 +19,8 @@
 
   **Syntax:** ALTER TABLE table_name ADD COLUMN column_name data_type;
 
+  
+
 
   
 
@@ -22,12 +28,16 @@
 
   **Synatx:** TRUNCATE TABLE table_name;
 
+  
+
 
   
 
 5] **COMMENT:**	Add comments to the data dictionary
 
    **Synatx:** COMMENT 'comment_text' ON TABLE table_name; 
+
+   
 
 
    
