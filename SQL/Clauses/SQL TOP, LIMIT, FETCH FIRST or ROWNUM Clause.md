@@ -4,9 +4,10 @@
 
 - The **SELECT TOP** clause is useful on large tables with thousands of records. Returning a large number of records can impact performance.
 
-  | Question                                           | Query                                       |
-|----------------------------------------------------|---------------------------------------------|
+| Question                                              | Query                                       |
+|-------------------------------------------------------|---------------------------------------------|
 | **Select only the first 3 records of the Customers table** | `SELECT TOP 3 * FROM Customers;`            |
+
                                                                               
 
 
@@ -45,7 +46,7 @@
  | Question                                                                                                  | Query                                                                                           |
 |-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | **Select the first 3 records of the Customers table where the country is "Germany" (SQL Server/MS Access):** | `SELECT TOP 3 * FROM Customers  WHERE Country='Germany';`                                      |
-| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**               | `SELECT * FROM Customers  WHERE Country='Germany'<br>LIMIT 3;`                                 |
+| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**               | `SELECT * FROM Customers  WHERE Country='Germany' LIMIT 3;`                                 |
 | **Select the first 3 records of the Customers table where the country is "Germany" (Oracle):**              | `SELECT * FROM Customers  WHERE Country='Germany'  FETCH FIRST 3 ROWS ONLY;`                 |
 
 ## ADD the ORDER BY Keyword [to sort the result]
