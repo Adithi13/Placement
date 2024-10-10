@@ -9,8 +9,8 @@
 | **Select only the first 3 records of the Customers table** | `SELECT TOP 3 * FROM Customers;`            |
 
                                                                               
-
-
+<br>
+<br>
 ---> ***NOTE:*** 
            - Not all database systems support the SELECT TOP clause.
            - MySQL supports the **LIMIT** clause to select a limited number of records, while Oracle uses **FETCH FIRST n ROWS ONLY** and **ROWNUM**.
@@ -28,8 +28,8 @@
 
 | Question                                             | Query                                                                                           |
 |------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Select the first 3 records of the Customers table (MySQL):** | `SELECT * FROM Customers  LIMIT 3;`                                                             |
-| **Select the first 3 records of the Customers table (Oracle 12):** | `SELECT * FROM Customers   FETCH FIRST 3 ROWS ONLY;`                                              |
+| **Select the first 3 records of the Customers table (MySQL):** | `SELECT * FROM Customers` <br> `LIMIT 3;`                                                             |
+| **Select the first 3 records of the Customers table (Oracle 12):** | `SELECT * FROM Customers` <br>  `FETCH FIRST 3 ROWS ONLY;`                                              |
 
 
 
@@ -38,22 +38,22 @@
 | Question                                                                                         | Query                                                                                           |
 |--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | **Selects the first 50% of the records from the "Customers" table (for SQL Server/MS Access):**   | `SELECT TOP 50 PERCENT * FROM Customers;`                                                       |
-| **Same in the case of Oracle:**                                                                  | `SELECT * FROM Customers  FETCH FIRST 50 PERCENT ROWS ONLY;`                                   |
+| **Same in the case of Oracle:**                                                                  | `SELECT * FROM Customers` <br> `FETCH FIRST 50 PERCENT ROWS ONLY;`                                   |
 
 
 ## ADD a WHERE CLAUSE
 
  | Question                                                                                                  | Query                                                                                           |
 |-----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Select the first 3 records of the Customers table where the country is "Germany" (SQL Server/MS Access):** | `SELECT TOP 3 * FROM Customers  WHERE Country='Germany';`                                      |
-| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**               | `SELECT * FROM Customers  WHERE Country='Germany' LIMIT 3;`                                 |
-| **Select the first 3 records of the Customers table where the country is "Germany" (Oracle):**              | `SELECT * FROM Customers  WHERE Country='Germany'  FETCH FIRST 3 ROWS ONLY;`                 |
+| **Select the first 3 records of the Customers table where the country is "Germany" (SQL Server/MS Access):** | `SELECT TOP 3 * FROM Customers` <br> `WHERE Country='Germany';`                                      |
+| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**               | `SELECT * FROM Customers` <br>  `WHERE Country='Germany' `<br> `LIMIT 3;`                                 |
+| **Select the first 3 records of the Customers table where the country is "Germany" (Oracle):**              | `SELECT * FROM Customers` <br>  `WHERE Country='Germany'` <br>  `FETCH FIRST 3 ROWS ONLY;`                 |
 
 ## ADD the ORDER BY Keyword [to sort the result]
 
  | Question                                                                                                      | Query                                                                                                   |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Select the first 3 records of the Customers table where the country is "Germany" (SQL Server/MS Access):**   | `SELECT TOP 3 * FROM Customers  ORDER BY CustomerName DESC;`                                          |
-| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**                  | `SELECT * FROM Customers  ORDER BY CustomerName DESC LIMIT 3;`                                     |
-| **Select the first 3 records of the Customers table where the country is "Germany" (Oracle):**                 | `SELECT * FROM Customers ORDER BY CustomerName DESC FETCH FIRST 3 ROWS ONLY;`                     |
+| **Select the first 3 records of the Customers table where the country is "Germany" (SQL Server/MS Access):**   | `SELECT TOP 3 * FROM Customers` <br>  `ORDER BY CustomerName DESC;`                                          |
+| **Select the first 3 records of the Customers table where the country is "Germany" (MySQL):**                  | `SELECT * FROM Customers` <br>  `ORDER BY CustomerName DESC` <br> `LIMIT 3;`                                     |
+| **Select the first 3 records of the Customers table where the country is "Germany" (Oracle):**                 | `SELECT * FROM Customers` <br> `ORDER BY CustomerName DESC` <br> `FETCH FIRST 3 ROWS ONLY;`                     |
 
