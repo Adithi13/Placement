@@ -6,31 +6,20 @@
 
   |Question     | Query                                                                                                                         |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| **Select only the first 3 records of the Customers table**       | `SELECT TOP 3 * FROM Customers;`      |                                                                                                |
+| **Select only the first 3 records of the Customers table**       | `SELECT TOP 3 * FROM Customers;`      |                                                                                                
 
 
 ---> ***NOTE:*** 
            - Not all database systems support the SELECT TOP clause.
            - MySQL supports the **LIMIT** clause to select a limited number of records, while Oracle uses **FETCH FIRST n ROWS ONLY** and **ROWNUM**.
 
-|------------------------|-----------------------------------------------------------------------------------------------------------------------|
-|**SQL Server / MS Access Syntax:** | `SELECT TOP number|percent column_name(s)`              |                                                    
-                                       `FROM table_name`                                       |
-                                       `WHERE condition;`                                                                                        |
-|**MySQL Syntax:** | `SELECT column_name(s)`|
-                      `FROM table_name`|
-                      `WHERE condition`|
-                      `LIMIT number;` |
-|**Oracle 12 Syntax:**|`SELECT column_name(s)`|
-                        `FROM table_name`|
-                        `ORDER BY column_name(s)`|
-                        `FETCH FIRST number ROWS ONLY;`  |
-|**Older Oracle Syntax:**|`SELECT column_name(s)`|
-                          `FROM table_name`|
-                          `WHERE ROWNUM <= number;`|
-|**Older Oracle Syntax (with ORDER BY):**|`SELECT *`|
-                                          `FROM (SELECT column_name(s) FROM table_name ORDER BY column_name(s))`|
-                                          `WHERE ROWNUM <= number;` |
+| **Database**                     | **Query Syntax**                                                                                                                                                     |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SQL Server / MS Access Syntax** | `SELECT TOP number|percent column_name(s)`<br>`FROM table_name`<br>`WHERE condition;`                                                                                |
+| **MySQL Syntax**                  | `SELECT column_name(s)`<br>`FROM table_name`<br>`WHERE condition`<br>`LIMIT number;`                                                                                 |
+| **Oracle 12 Syntax**              | `SELECT column_name(s)`<br>`FROM table_name`<br>`ORDER BY column_name(s)`<br>`FETCH FIRST number ROWS ONLY;`                                                         |
+| **Older Oracle Syntax**           | `SELECT column_name(s)`<br>`FROM table_name`<br>`WHERE ROWNUM <= number;`                                                                                            |
+| **Older Oracle Syntax (with ORDER BY)** | `SELECT *`<br>`FROM (SELECT column_name(s) FROM table_name ORDER BY column_name(s))`<br>`WHERE ROWNUM <= number;`                                                    |
 
 
 ## LIMIT and FETCH FIRST example
