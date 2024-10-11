@@ -45,7 +45,6 @@ Give the counted column a name by using the AS keyword.
 ### Use COUNT() with GROUP BY
 
 Here we use the COUNT() function and the GROUP BY clause, to return the number of records for each category in the Products table:
-
-        `SELECT COUNT(*) AS [Number of records], CategoryID` <br> `FROM Products` <br> `GROUP BY CategoryID;`
+             `SELECT COUNT(*) AS [Number of records], CategoryID` <br> `FROM Products` <br> `GROUP BY CategoryID;`
 
 
