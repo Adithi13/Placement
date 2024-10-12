@@ -96,3 +96,80 @@ WHERE departments.department_id IS NULL;
 ```
 fetches the names of employees who are not assigned to any department.
 
+### Explain the difference between an INNER JOIN and a WHERE clause for combining tables.
+
+ - An `INNER JOIN` explicitly combines tables based on a specified condition, returning rows where the condition is met. Using a `WHERE` clause for combining tables involves listing multiple tables in the `FROM` clause and applying the join condition in the `WHERE` clause. However, using `INNER JOIN` is more precise and more explicit. For example:
+
+``` sql
+SELECT e.name, d.department_name
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id;
+```
+
+``` sql
+SELECT e.name, d.department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id;
+```
+
+
+### How can PIVOT be used with JOINs in SQL?
+
+  - Using `PIVOT` with `JOINs` can transform rows into columns. For example, in SQL Server:
+
+``` sql
+SELECT *
+FROM (
+SELECT e.name, d.department_name, e.salary
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id
+) src
+PIVOT (
+MAX(salary) FOR department_name IN ([HR], [IT], [Sales])
+) Pvt;
+```
+
+### How can a LEFT JOIN be performed with multiple conditions?
+
+To perform a `LEFT JOIN` with multiple conditions, include all conditions in the `ON` clause using logical operators. For example:
+
+``` sql
+SELECT e.name, d.department_name
+FROM employees e
+LEFT JOIN departments d ON e.department_id = d.department_id AND e.hire_date > ‘2020-01-01’ AND e.status = ‘active’;
+```
+This query joins `employees` and `departments` with additional conditions on `hire_date` and `status.`
+
+### How can a many-to-many relationship be handled with JOINs?
+
+Handling a many-to-many relationship typically involves using an intermediary (junction) table. For example, with `students,` `courses,` and a `student_courses` table to represent the many-to-many relationship:
+
+``` sql
+SELECT s.name, c.course_name
+FROM students s
+INNER JOIN student_courses sc ON s.student_id = sc.student_id
+INNER JOIN courses c ON sc.course_id = c.course_id;
+```
+
+### How can a self-join be written with conditions?
+
+A self-join joins a table with itself. For example, to find employees and their managers:
+
+``` sql
+SELECT e1.name AS employee, e2.name AS manager
+FROM employees e1
+LEFT JOIN employees e2 ON e1.manager_id = e2.employee_id
+WHERE e1.department_id = 10;
+```
+
+### How can indexing be utilized to speed up JOIN operations?
+
+Indexing can significantly speed up `JOIN` operations by enabling the database to locate and retrieve rows quickly. Indexes should be created on columns used in join conditions. 
+
+``` sql
+CREATE INDEX idx_employee_department_id ON employees(department_id);
+CREATE INDEX idx_department_department_id ON departments(department_id);
+```
+
+These indexes help the database efficiently perform the join operation between `employees` and `departments` by quickly finding matching `department_id` values.
+
