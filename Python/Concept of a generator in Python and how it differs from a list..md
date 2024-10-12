@@ -15,6 +15,7 @@ def square_numbers(n):
 # Using the generator in a loop
 for num in square_numbers(5):
     print("Generated:", num)
+
 # Output:
 # Generated: 0
 # Generated: 1
@@ -22,6 +23,6 @@ for num in square_numbers(5):
 # Generated: 9
 # Generated: 16
 
-
+```
 
 n this example, the square_numbers function is a generator that yields square numbers. The generator is used in a loop, and values are generated on each iteration, conserving memory and allowing lazy evaluation.
