@@ -9,7 +9,7 @@
 | **expandtabs()** |Sets the tab size of the string             |
 | **find()** |Searches the string for a specified value and returns the position of where it was found             |
 | **format()** |Formats specified values in a string             |
-| **format_map()	** |Searches the string for a specified value and returns the position of where it was found             |
+| **format_map()** |Searches the string for a specified value and returns the position of where it was found             |
 | **isalnum()** |Returns True if all characters in the string are alphanumeric             |
 | **isalpha()** |Returns True if all characters in the string are in the alphabet             |
 | **isascii()** |Returns True if all characters in the string are ascii characters             |
